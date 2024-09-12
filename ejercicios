@@ -1,0 +1,77 @@
+
+-- ejercicio uno
+factorial :: Int -> Int
+factorial n
+    | n == 1 = 1
+    | otherwise = n * factorial (n - 1)
+    
+main :: IO()
+main = do
+    let a = 4
+    putStrLn $ "El factorial es: "
+    print(factorial a)
+
+
+-- ejercicio 2
+catalan :: Int -> Int
+catalan n
+    | n == 1 = 1
+    | otherwise = ((2 * (2 *n - 1)) `div` (n+1)) * catalan(n - 1)
+    
+main :: IO()
+main = do
+    let a = 8
+    putStrLn $ "El catalan es: "
+    print(catalan a)
+
+
+-- ejercicio 3 (revisar)
+raizDigital :: Int -> Int
+raizDigital n
+    | n == 1 = 1
+    | otherwise = (n `div` 10) * raizDigital(n - 1)
+    
+main :: IO()
+main = do
+    let a = 23
+    putStrLn $ "La raizDigital es: "
+    print(raizDigital a)
+
+
+-- ejercicio 4
+potenciaBase2 :: Int -> Int
+potenciaBase2 n
+    | n == 1 = 2
+    | otherwise = potenciaBase2(n - 1) * 2
+    
+main :: IO()
+main = do
+    let a = 10
+    putStrLn $ "La potenciaBase2 es: "
+    print(potenciaBase2 a)
+
+
+-- ejercicio 5 (revisar)
+cuatroUltimos :: Int -> Int
+cuatroUltimos n
+    | n == 1 = 1
+    | otherwise = cuatroUltimos(n - 1) + 1
+    
+main :: IO()
+main = do
+    let a = 565672
+    putStrLn $ "Los cuatroUltimos es: "
+    print(cuatroUltimos a)
+
+
+-- ejercicio 6 (revisar)
+segundo :: Int -> Int
+segundo n
+    | n == 1 = 1
+    | otherwise = cuatroUltimos(n - 1) + 1
+    
+main :: IO()
+main = do
+    let a = 565672
+    putStrLn $ "El segundo es: "
+    print(segundo a)
