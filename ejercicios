@@ -13,16 +13,16 @@ main = do
 
 
 -- ejercicio 2
-catalan :: Int -> Int
 catalan n
+    | n == 0 = 1
     | n == 1 = 1
-    | otherwise = ((2 * (2 *n - 1)) `div` (n+1)) * catalan(n - 1)
+    | otherwise = (2 * (2 * n - 1) / (n + 1)) * catalan(n - 1)
     
 main :: IO()
 main = do
-    let a = 8
+    let n = 5
     putStrLn $ "El catalan es: "
-    print(catalan a)
+    print(catalan n)
 
 
 -- ejercicio 3
