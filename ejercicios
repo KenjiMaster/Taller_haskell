@@ -25,17 +25,18 @@ main = do
     print(catalan a)
 
 
--- ejercicio 3 (revisar)
+-- ejercicio 3
 raizDigital :: Int -> Int
 raizDigital n
+    | n == 0 = 0
     | n == 1 = 1
-    | otherwise = (n `div` 10) * raizDigital(n - 1)
+    | otherwise = (n `mod` 10) + raizDigital(n `div` 10)
     
-main :: IO()
+main :: IO() 
 main = do
-    let a = 23
+    let n = 23
     putStrLn $ "La raizDigital es: "
-    print(raizDigital a)
+    print(raizDigital n)
 
 
 -- ejercicio 4
@@ -51,27 +52,37 @@ main = do
     print(potenciaBase2 a)
 
 
--- ejercicio 5 (revisar)
+-- ejercicio 5
 cuatroUltimos :: Int -> Int
 cuatroUltimos n
+    | n == 0 = 0
     | n == 1 = 1
-    | otherwise = cuatroUltimos(n - 1) + 1
+    | otherwise = 1 + cuatroUltimos((n-1) `mod` 10000)
     
 main :: IO()
 main = do
-    let a = 565672
+    let a = 67267
     putStrLn $ "Los cuatroUltimos es: "
     print(cuatroUltimos a)
 
 
--- ejercicio 6 (revisar)
+-- ejercicio 6
 segundo :: Int -> Int
 segundo n
+    | n == 0 = 0
     | n == 1 = 1
-    | otherwise = cuatroUltimos(n - 1) + 1
+    | otherwise = 1 + segundo((n-1) `div` 10)
     
 main :: IO()
 main = do
     let a = 565672
     putStrLn $ "El segundo es: "
     print(segundo a)
+
+
+
+
+
+
+
+
